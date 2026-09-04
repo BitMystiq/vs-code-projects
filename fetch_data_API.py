@@ -1,4 +1,8 @@
 import requests
-r = requests.get("https://bible-api.com/proverb 3:5")
-print(r.json())
-
+book, chapter, verse = input("Enter the book chapter and verse ").split()
+reference = f"{book} {chapter}:{verse}"
+r = requests.get(f"https://bible-api.com/{reference}")
+data = r.json()
+verse = data['text']
+print(reference,end="\n")
+print(verse)
