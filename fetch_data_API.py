@@ -5,5 +5,4 @@ r = requests.get(f"https://bible-api.com/{reference}")
 data = r.json()
 verse = data['text']
 print(f"\n{reference}\n{verse}")
-print(reference,end="\n")
-print(verse)
+
